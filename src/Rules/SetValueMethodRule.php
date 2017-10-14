@@ -73,7 +73,7 @@ class SetValueMethodRule implements Rule
 			)];
 		}
 		$property = $class->getProperty($fieldName, $scope);
-		$propertyType = $property->getType();
+		$propertyType = $property->getWriteableType();
 		if (!$propertyType->accepts($valueType, true)->yes()) {
 			return [sprintf(
 				'Entity %s: property $%s (%s) does not accept %s.',
